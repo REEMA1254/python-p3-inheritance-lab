@@ -5,9 +5,8 @@ from user import User
 import random
 
 class Teacher(User):
-
-     def _init_(self, first_name, last_name):
-        super()._init_(first_name, last_name)
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
         self.knowledge = [
             "str is a data type in Python",
             "programming is hard, but it's worth it",
@@ -20,5 +19,4 @@ class Teacher(User):
         ]
 
     def teach(self):
-        return self.knowledge[random.randint(0, len(self.knowledge) - 1)]
-        pass
+        return random.choice(self.knowledge)
